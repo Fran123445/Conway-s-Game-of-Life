@@ -76,10 +76,34 @@ namespace gameOfLife
             }
 
         }
+        
+
+        static void randomSeed(int[,] cells)
+        {
+
+            Random rnd = new Random();
+
+            int lowerBound = rnd.Next(0, 25);
+            int upperBound = rnd.Next(25, 50);
+
+            for (int i = lowerBound; i < upperBound; i++)
+            {
+                for (int j = lowerBound; j < upperBound; j++)
+                {
+                    if (rnd.Next(0, 101) < 50)
+                    {
+                        cells[i, j] = 1;
+                    }
+                }
+            }
+
+        }
 
         static void Main()
         {
-            int[,] cells = new int[10, 10];
+            int[,] cells = new int[50, 50];
+
+            randomSeed(cells);
 
             while (true)
             {
