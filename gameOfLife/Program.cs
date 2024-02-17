@@ -7,6 +7,7 @@ namespace gameOfLife
 
         static void showCells(int[,] cells)
         {
+            Console.SetCursorPosition(0, 0);
             for (int i = 0; i < cells.GetLength(0); i++)
             {
                 for (int j = 0; j < cells.GetLength(1); j++)
